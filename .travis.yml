@@ -19,6 +19,24 @@ matrix:
     - cmake . -DENABLE_TESTS=1
     - make VERBOSE=1
     - make VERBOSE=1 check
+  - os: linux
+    dist: xenial
+    arch: ppc64le
+    addons:
+      apt:
+        packages:
+        - cmake
+        - libboost-dev
+        - libboost-filesystem-dev
+        - libboost-locale-dev
+        - libtag1-dev
+        - libcue-dev
+        - libedit-dev
+        - pkg-config
+    script:
+    - cmake . -DENABLE_TESTS=1
+    - make VERBOSE=1
+    - make VERBOSE=1 check
 
   - os: osx
     addons:
